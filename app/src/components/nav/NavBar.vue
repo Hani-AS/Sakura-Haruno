@@ -7,20 +7,7 @@
           <span>HARUNO</span>
         </div>
       </router-link>
-      <ul v-show="!mobile" class="navigation">
-        <li>
-          <router-link class="link" :to="{ name: '' }">Works</router-link>
-        </li>
-        <li>
-          <router-link class="link" :to="{ name: '' }">About</router-link>
-        </li>
-        <li>
-          <router-link class="link" :to="{ name: '' }">Media</router-link>
-        </li>
-        <li>
-          <router-link class="link" :to="{ name: '' }">Contact</router-link>
-        </li>
-      </ul>
+      <NavList v-show="!mobile" className="navigation" />
       <div class="icon">
         <i
           v-if="mobile"
@@ -30,26 +17,14 @@
         ></i>
       </div>
       <transition name="mobile-nav">
-        <ul v-show="mobileNav" class="dropdown-nav">
-          <li>
-            <router-link class="link" :to="{ name: '' }">Works</router-link>
-          </li>
-          <li>
-            <router-link class="link" :to="{ name: '' }">About</router-link>
-          </li>
-          <li>
-            <router-link class="link" :to="{ name: '' }">Media</router-link>
-          </li>
-          <li>
-            <router-link class="link" :to="{ name: '' }">Contact</router-link>
-          </li>
-        </ul>
+        <NavList v-show="mobileNav" className="dropdown-nav" />
       </transition>
     </nav>
   </header>
 </template>
 <script>
 import { ref, onUnmounted } from "vue";
+import NavList from "./NavList.vue";
 export default {
   name: "NavBar",
   setup() {
@@ -79,9 +54,12 @@ export default {
 
     return { mobile, mobileNav, toggleMobileNav };
   },
+  components: {
+    NavList,
+  },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 header {
   width: 100%;
   position: fixed;
