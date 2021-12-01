@@ -3,7 +3,7 @@
     <nav>
       <router-link class="home-link" :to="{ name: 'Home' }">
         <div class="logo">
-          <img src="@/assets/Nav-Logo.png" alt />
+          <img src="@/assets/Nav-Logo.png" alt width="50" height="54" />
           <span>HARUNO</span>
         </div>
       </router-link>
@@ -22,6 +22,7 @@
     </nav>
   </header>
 </template>
+
 <script>
 import { ref, onUnmounted } from "vue";
 import NavList from "./NavList.vue";
@@ -59,10 +60,11 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 header {
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
 
   nav {
     display: flex;
@@ -73,6 +75,7 @@ header {
     transition: 0.5s ease all;
     width: 90%;
     margin: 0 auto;
+    margin-bottom: 20px;
     @media (min-width: 1140px) {
       max-width: 1140px;
     }
@@ -90,14 +93,14 @@ header {
 
     li {
       font-weight: 600;
-      margin-left: 46px;
+      margin-left: 70px;
     }
 
     .link {
-      font-size: 16px;
+      font-size: 20px;
       transition: 0.5s ease all;
-      padding-bottom: 4px;
-      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      border-bottom: 4px solid transparent;
       color: #2c2851;
 
       &:hover {
@@ -110,11 +113,13 @@ header {
       align-items: center;
 
       img {
-        margin-top: 10px;
+        margin-top: 5px;
         width: 50px;
+        height: auto;
+        aspect-ratio: attr(width) / attr(height);
       }
       span {
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 600;
         margin-left: 15px;
       }
@@ -148,6 +153,7 @@ header {
       background-color: #fff;
       top: 0;
       left: 0;
+      z-index: 2;
       li {
         margin-left: 10px;
         margin-top: 20px;
