@@ -1,10 +1,12 @@
 <template>
   <div class="button-wrapper">
-    <button><slot /> <i class="fas fa-arrow-right"></i></button>
+    <button><slot /> <i class="fas fa-arrow-right" /></button>
   </div>
 </template>
+
 <script>
-import { computed } from "@vue/reactivity";
+import { computed } from "vue";
+
 export default {
   props: {
     isAbsolute: Boolean,
@@ -22,6 +24,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 .button-wrapper {
   display: flex;
