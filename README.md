@@ -4,6 +4,8 @@
 A landing page created with vue 3 using the composition api. The images are lazy loaded to improve the performance of the app and avoid layout shift. 
 The component slider is created with the latest Swiperjs library and the form validation is created with vuelidate.
 
+The app is responsive from 320px to widescreen.
+
 ## Live project [Demo](https://vue-3-landing-page.netlify.app/) 
 
 ## Preview
